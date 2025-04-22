@@ -12,4 +12,8 @@ public interface API_repository extends JpaRepository<API, String> {
     List<API> FindByName(String nom);
     List<API> FindByDate(Date date);
     List<API> FindByTime(Time time);
+
+    API findByName(String nom);
+
+    boolean existsByNom(String nom);
 }

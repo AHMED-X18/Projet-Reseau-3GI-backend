@@ -5,11 +5,11 @@ import java.io.*;
 
 @Embeddable
 public class Id_access implements Serializable {
-    private String id_user;
+    private String nom_user;
     private String id_API;
 
     public Id_access(String id_user, String id_API){
-        this.id_user=id_user;
+        this.nom_user=id_user;
         this.id_API=id_API;
     }
 
@@ -18,7 +18,7 @@ public class Id_access implements Serializable {
     }
 
     public String getId_user() {
-        return id_user;
+        return nom_user;
     }
 
     public void setId_API(String id_API) {
@@ -26,6 +26,6 @@ public class Id_access implements Serializable {
     }
 
     public void setId_user(String id_user) {
-        this.id_user = id_user;
+        this.nom_user = id_user;
     }
 }

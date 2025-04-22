@@ -5,10 +5,9 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table (name="utilisateur")
 public class Utilisateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id_user;
     private  String nom ;
     private String email;
     private String password;
@@ -29,10 +28,6 @@ public class Utilisateur {
         return email;
     }
 
-    public String getId_user() {
-        return id_user;
-    }
-
     public String getNom() {
         return nom;
     }
@@ -43,10 +38,6 @@ public class Utilisateur {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
     }
 
     public void setNom(String nom) {

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table (name="api")
 public class API {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,6 +6,7 @@ import java.sql.Time;
 import java.util.Date;
 
 @Entity
+@Table (name="access")
 public class Access {
     @EmbeddedId
     private Id_access access;
