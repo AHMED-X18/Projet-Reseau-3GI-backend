@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Manager - Tableau de bord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/acceuil.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Layout avec sidebar -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen glass-effect sticky top-0">
+            <div class="p-4">
+                <!-- Logo -->
+                <div class="flex items-center mb-8">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plug text-white"></i>
+                    </div>
+                    <span class="ml-3 text-xl font-bold gradient-text">API Manager</span>
+                </div>
+                
+                <!-- Menu -->
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item bg-gray-800">
+                                <i class="fas fa-tachometer-alt mr-3 text-blue-400"></i>
+                                <span>Tableau de bord</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-server mr-3 text-purple-400"></i>
+                                <span>Mes API</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-key mr-3 text-green-400"></i>
+                                <span>Clés API</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-chart-line mr-3 text-yellow-400"></i>
+                                <span>Analytiques</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-cog mr-3 text-gray-400"></i>
+                                <span>Paramètres</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-question-circle mr-3 text-blue-300"></i>
+                                <span>Aide</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg menu-item">
+                                <i class="fas fa-sign-out-alt mr-3 text-red-400"></i>
+                                <span>Déconnexion</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold">Bonjour, <span class="gradient-text">Jean Dupont</span> 👋</h1>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-gray-400 text-xl cursor-pointer hover:text-white"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </div>
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Barre de recherche -->
+            <div class="mb-8">
+                <div class="relative max-w-2xl mx-auto search-bar">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-500"></i>
+                    </div>
+                    <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-full py-3 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500" placeholder="Rechercher une API...">
+                </div>
+                
+                <!-- Catégories -->
+                <div class="flex justify-center space-x-4 mt-6">
+                    <a href="#" class="category-tag px-4 py-2 bg-gray-800 rounded-full text-sm font-medium hover:bg-purple-600">
+                        <i class="fas fa-history mr-2"></i> Récents
+                    </a>
+                    <a href="#" class="category-tag px-4 py-2 bg-gray-800 rounded-full text-sm font-medium hover:bg-blue-600">
+                        <i class="fas fa-list mr-2"></i> Toutes
+                    </a>
+                    <a href="#" class="category-tag px-4 py-2 bg-gray-800 rounded-full text-sm font-medium hover:bg-green-600">
+                        <i class="fas fa-chart-line mr-2"></i> Finance
+                    </a>
+                    <a href="#" class="category-tag px-4 py-2 bg-gray-800 rounded-full text-sm font-medium hover:bg-yellow-600">
+                        <i class="fas fa-image mr-2"></i> Image
+                    </a>
+                </div>
+            </div>
+
+            <!-- API Recommandées -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">API Recommandées pour vous</h2>
+                
+                <!-- Première ligne -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- API 1 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-map-marked-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Géolocalisation</h3>
+                                <span class="text-xs text-green-400">Gratuit</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Obtenez des données de localisation précises pour vos applications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Géographie</span>
+                            <span class="px-2 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Localisation</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                    
+                    <!-- API 2 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-exchange-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Taux de change</h3>
+                                <span class="text-xs text-green-400">Gratuit</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Taux de change actualisés pour plus de 150 devises mondiales.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-green-900 text-green-300 rounded-full text-xs">Finance</span>
+                            <span class="px-2 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">Devises</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                    
+                    <!-- API 3 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-newspaper text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Actualités</h3>
+                                <span class="text-xs text-yellow-400">Premium</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Accès à des milliers de sources d'actualités en temps réel.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-red-900 text-red-300 rounded-full text-xs">Médias</span>
+                            <span class="px-2 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Actualités</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                </div>
+                
+                <!-- Deuxième ligne -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- API 4 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-cloud-sun-rain text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Météo</h3>
+                                <span class="text-xs text-green-400">Gratuit</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Données météorologiques en temps réel pour n'importe quelle ville.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-teal-900 text-teal-300 rounded-full text-xs">Météo</span>
+                            <span class="px-2 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Temps réel</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                    
+                    <!-- API 5 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-image text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Images</h3>
+                                <span class="text-xs text-green-400">Gratuit</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Accès à une bibliothèque de millions d'images libres de droits.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Images</span>
+                            <span class="px-2 py-1 bg-pink-900 text-pink-300 rounded-full text-xs">Médias</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                    
+                    <!-- API 6 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-robot text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">IA Textuelle</h3>
+                                <span class="text-xs text-yellow-400">Premium</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-4 text-sm">Générez du texte intelligent avec notre puissante IA.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-900 text-indigo-300 rounded-full text-xs">IA</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-xs">Texte</span>
+                        </div>
+                        <button class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors">Voir détails</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/acceuil.js"></script>
+</body>
+</html>

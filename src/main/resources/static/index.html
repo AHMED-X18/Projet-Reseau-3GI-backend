@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Manager - Gestion des API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="glass-effect sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo + App Name -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-plug text-white"></i>
+                        </div>
+                        <span class="ml-3 text-xl font-bold gradient-text">API Manager</span>
+                    </div>
+                </div>
+                
+                <!-- Login Button -->
+                <div>
+                    <button class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-sign-in-alt mr-2"></i> Connexion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Message de bienvenue -->
+        <div class="text-center mb-12">
+            <p id="welcomeMessage" class="text-2xl italic text-gray-300 font-medium"></p>
+        </div>
+
+        <!-- Section API Gratuites -->
+        <section class="mb-16">
+            <div class="glass-effect rounded-2xl p-8 mb-8">
+                <h2 class="text-3xl font-bold mb-6 text-center">API Gratuites</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- API 1 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-map-marked-alt text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">API Géolocalisation</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Obtenez des données de localisation précises pour vos applications.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-green-400">Gratuit</span>
+                            <button class="text-sm text-blue-400 hover:text-blue-300">Voir détails →</button>
+                        </div>
+                    </div>
+                    
+                    <!-- API 2 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-cloud-sun-rain text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">API Météo</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Données météorologiques en temps réel pour n'importe quelle ville.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-green-400">Gratuit</span>
+                            <button class="text-sm text-blue-400 hover:text-blue-300">Voir détails →</button>
+                        </div>
+                    </div>
+                    
+                    <!-- API 3 -->
+                    <div class="bg-gray-800 p-6 rounded-xl api-card transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-exchange-alt text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">API Devises</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Taux de change actualisés pour plus de 150 devises.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-green-400">Gratuit</span>
+                            <button class="text-sm text-blue-400 hover:text-blue-300">Voir détails →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bouton Voir plus -->
+                <div class="text-center mt-8">
+                    <button class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-medium transition-all duration-300 transform hover:scale-105">
+                        Voir plus d'API <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Témoignages -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">Témoignages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="testimonialsContainer">
+                <!-- Les témoignages seront générés dynamiquement -->
+            </div>
+        </section>
+
+        <!-- Réseaux sociaux -->
+        <section class="mb-16">
+            <div class="flex items-center justify-center mb-6">
+                <h2 class="text-2xl font-bold mr-4">Réseaux sociaux</h2>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-800">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tableau de liens -->
+        <section class="mb-16">
+            <table>
+                <thead>
+                    <tr class="border-b border-gray-700">
+                        <th class="text-lg font-bold">Canaux</th>
+                        <th class="text-lg font-bold">Développeurs</th>
+                        <th class="text-lg font-bold">Entreprises</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-700">
+                        <td><a href="#" class="text-gray-300 hover:text-white">Whatsapp</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">API Docs</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">A Propos</a></td>
+                    </tr>
+                    <tr class="border-b border-gray-700">
+                        <td><a href="#" class="text-gray-300 hover:text-white">Email</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">Bibliothèques</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">Sécurité</a></td>
+                    </tr>
+                    <tr class="border-b border-gray-700">
+                        <td><a href="#" class="text-gray-300 hover:text-white">SMS</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">Webhooks</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">Tarification</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="text-gray-300 hover:text-white">PUSH</a></td>
+                        <td><a href="#" class="text-gray-300 hover:text-white">Exemples</a></td>
+        <td><a href="#" class="text-gray-300 hover:text-white">Contact</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2023 API Manager. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/presentation.js"></script>
+</body>
+</html>
