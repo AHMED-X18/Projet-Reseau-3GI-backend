@@ -12,13 +12,13 @@ public class Access {
     private Id_access access;
 
     @ManyToOne
-    @MapsId("Id_user")
-    @JoinColumn(name="Id_user")
+    @MapsId("username")
+    @JoinColumn(name="username")
     private Utilisateur user;
 
     @ManyToOne
-    @MapsId("Id_API")
-    @JoinColumn(name="Id_API")
+    @MapsId("apiname")
+    @JoinColumn(name="apiname")
     private API API;
 
     private Date date_connexion;

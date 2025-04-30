@@ -8,10 +8,15 @@ import java.util.Set;
 @Table (name="utilisateur")
 public class Utilisateur {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column(name="nom")
     private  String nom ;
+    @Column(name="email")
     private String email;
+    @Column(name="mot_de_passe")
     private String password;
     @Lob
+    @Column(name="photo")
     private byte[] photo;
 
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)

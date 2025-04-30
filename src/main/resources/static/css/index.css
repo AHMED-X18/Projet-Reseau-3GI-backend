@@ -1,0 +1,39 @@
+.gradient-bg {
+            background: linear-gradient(135deg, #000000, #684209);
+        }
+        .api-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 10px;
+        }
+        .category-chip {
+            transition: all 0.3s ease;
+        }
+        .category-chip:hover {
+            background-color: #6e8efb;
+            color: white;
+        }
+        .category-chip.active {
+            background-color: #6e8efb;
+            color: white;
+        }
+        .api-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .api-details.open {
+            max-height: 500px;
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }

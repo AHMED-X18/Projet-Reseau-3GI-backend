@@ -6,13 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class  MyView {
-    @GetMapping("/ma-vue")
-    public String afficherMaVue(Model model) {
-        // Ajout d'attributs au modèle
-        model.addAttribute("message", "Bonjour depuis Spring Boot!");
-        model.addAttribute("titre", "Ma première vue");
-
+    @GetMapping("/")
+    public String showView() {
         // Retourne le nom de la vue (template)
-        return "acceuil";
+        return "redirect:/presentation.html";
         }
 }

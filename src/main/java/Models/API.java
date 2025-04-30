@@ -9,11 +9,16 @@ import java.util.Set;
 public class API {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private String id_API;
+    @Column(name="nom", nullable=false)
     private String nom;
+    @Column(name="description", nullable=false)
     private String description;
+    @Column(name="url", nullable = false)
     private String URL;
+    @Column(name="version")
+    private String version;
+    @Column(name="activite", nullable = false)
+    private boolean activite;
 
     @OneToMany(mappedBy = "API", cascade = CascadeType.ALL)
     private Set<Access> access;
@@ -28,8 +33,8 @@ public class API {
         this.description = description;
     }
 
-    public void setId_API(String id_API) {
-        this.id_API = id_API;
+    public String getVersion() {
+        return version;
     }
 
     public void setURL(String URL) {
@@ -40,10 +45,13 @@ public class API {
         return nom;
     }
 
-    public String getId_API() {
-        return id_API;
+    public void setVersion(String version) {
+        this.version = version;
     }
 
+    public void setActivite(boolean activite) {
+        this.activite = activite;
+    }
     public String getDescription() {
         return description;
     }

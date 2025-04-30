@@ -1,4 +1,4 @@
-package Repository.Parent;
+package Repository;
 
 import Models.API;
 import Models.Utilisateur;

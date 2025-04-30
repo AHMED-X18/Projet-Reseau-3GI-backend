@@ -1,6 +1,6 @@
 package Service;
 import Models.Utilisateur;
-import Repository.Parent.Utilisateur_Repository;
+import Repository.Utilisateur_Repository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,6 +70,10 @@ public class Utilisateur_service {
             Utilisateur user = findByEmail(identifiant);
             userRepository.delete(user);
         }
+    }
+
+    public boolean existById(String id){
+        return userRepository.existsById(id);
     }
 
 }

@@ -1,6 +1,6 @@
 package Service;
 import Models.API;
-import Repository.Parent.API_repository;
+import Repository.API_repository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,21 +22,6 @@ public class API_service {
         return APIRepository.findByName(nom);
     }
 
-    public API createAPI(@NotNull API api) {
-        // Vérification de l'existence de l'utilisateur
-        if (APIRepository.existsById(api.getId_API())) {
-            throw new RuntimeException("API déja existante");
-        }
-        if (APIRepository.existsByNom(api.getNom())) {
-            throw new RuntimeException("API déjà existante");
-        }
-        api.setDescription(api.getDescription());
-        api.setNom(api.getNom());
-        api.setURL(api.getURL());
-        api.setId_API(api.getId_API());
-        return APIRepository.save(api);
-    }
-
     public API updateAPI(String nom, API api) {
         API new_api = findByName(nom);
         if (new_api == null) {
@@ -44,7 +29,7 @@ public class API_service {
         }
         new_api.setDescription(api.getDescription());
         new_api.setURL(api.getURL());
-        new_api.setId_API(api.getId_API());
+        new_api.setNom(api.getNom());
         return APIRepository.save(new_api);
     }
 
@@ -55,6 +40,8 @@ public class API_service {
         API api = findByName(identifiant);
         APIRepository.delete(api);
     }
-
+    public boolean existById(String id){
+        return APIRepository.existsById(id);
+    }
 }
 

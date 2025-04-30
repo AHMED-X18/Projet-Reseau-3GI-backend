@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - API Hub</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="css/connexion.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Connexion Form Modal -->
+    <div id="connexionModal" class="modal">
+        <div class="modal-content">
+            <h2 class="title">Formulaire d'Inscription</h2>
+            <form id="connexionForm">
+    
+                
+                <div class="form-group">
+                    <label for="profession">Nom d'utilisateur</label>
+                    <input type="text" id="profession" class="w-full input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" class="w-full input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Adresse mail</label>
+                    <input type="password" id="mail" class="w-full input-field" required>
+                </div>
+                <div class="btn-container">
+                    <button type="button" onclick="closeModal()" class="btn btn-cancel"><a href ='portailweb.html'>Annuler</a></button>
+                    <button type="submit" class="btn btn-submit"><a href='portailweb.html'>S'inscrire</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/connexion.js"></script>
+</body>
+</html>
