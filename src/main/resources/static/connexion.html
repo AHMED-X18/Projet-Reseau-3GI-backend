@@ -7,37 +7,39 @@
     <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="css/connexion.css" rel="stylesheet">
-
 </head>
 <body>
 
-    <!-- Connexion Form Modal -->
-    <div id="connexionModal" class="modal">
-        <div class="modal-content">
-            <h2 class="title">Formulaire d'Inscription</h2>
-            <form id="connexionForm">
-    
-                
-                <div class="form-group">
-                    <label for="profession">Nom d'utilisateur</label>
-                    <input type="text" id="profession" class="w-full input-field" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" class="w-full input-field" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Adresse mail</label>
-                    <input type="password" id="mail" class="w-full input-field" required>
-                </div>
-                <div class="btn-container">
-                    <button type="button" onclick="closeModal()" class="btn btn-cancel"><a href ='portailweb.html'>Annuler</a></button>
-                    <button type="submit" class="btn btn-submit"><a href='portailweb.html'>S'inscrire</a></button>
-                </div>
-            </form>
-        </div>
-    </div>
+<!-- Connexion Form Modal -->
+<div id="connexionModal" class="modal">
+    <div class="modal-content">
+        <h2 class="title">Formulaire d'Inscription</h2>
+        <form action="/user/inscription" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="nom" class="w-full input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Adresse mail</label>
+                <input type="email" id="mail" name="email" class="w-full input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" class="w-full input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="profilePicture">Photo de profil</label>
+                <input type="file" id="profilePicture" name="photo" accept="image/*" class="w-full input-field">
+            </div>
 
-    <script src="js/connexion.js"></script>
+            <div class="btn-container">
+                <button type="button" onclick="closeModal()" class="btn btn-cancel">Annuler</button>
+                <button type="submit" class="btn btn-submit">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/connexion.js"></script>
 </body>
 </html>
