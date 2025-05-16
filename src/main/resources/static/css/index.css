@@ -1,39 +1,42 @@
-.gradient-bg {
-            background: linear-gradient(135deg, #000000, #684209);
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #40ff);
+        }
+        .api-card {
+            transition: all 0.3s ease;
+            min-width: 320px;
         }
         .api-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        .highlight {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: black;
-            border-radius: 10px;
-        }
-        .category-chip {
-            transition: all 0.3s ease;
-        }
-        .category-chip:hover {
-            background-color: #6e8efb;
-            color: white;
-        }
-        .category-chip.active {
-            background-color: #6e8efb;
-            color: white;
-        }
-        .api-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-        .api-details.open {
-            max-height: 500px;
-        }
         .testimonial-card {
             transition: all 0.3s ease;
         }
         .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        .api-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.5rem;
+            padding-bottom: 1rem;
+            -webkit-overflow-scrolling: touch;
+        }
+        .api-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .api-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .api-scroll-container::-webkit-scrollbar-thumb {
+            background: #a777e3;
+            border-radius: 10px;
+        }
+        .api-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #6e8efb;
+        }
+    

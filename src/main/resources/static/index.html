@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
-
+    
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Header -->
@@ -19,7 +19,7 @@
                     <h1 class="text-2xl md:text-3xl font-bold">API Hub</h1>
                 </div>
                 <nav class="flex space-x-1 md:space-x-6">
-                    <a href="connexion.html" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-20 transition"><span class="highlight"><strong>Connexion</strong></span></a>
+                    <a href="login.html" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-20 transition"><span class="highlight"><strong>Connexion</strong></span></a>
                 </nav>
             </div>
         </div>
@@ -35,22 +35,32 @@
 
     <!-- API List Section -->
     <section class="container mx-auto px-4 py-12">
-        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">APIs Populaires</h3>
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">APIs Populaires</h3>
+            <div class="flex space-x-2">
+                <button class="scroll-left-btn p-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-right-btn p-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="api-scroll-container">
             <!-- API Card 1 -->
-            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                            <i class="fas fa-chart-line text-purple-600 text-xl"></i>
+                            <i class="fas fa-lock text-purple-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-xl text-gray-800">API Financière</h4>
-                            <span class="text-sm text-gray-500">Finance</span>
+                            <h4 class="font-bold text-xl text-gray-800">API d'authentification</h4>
+                            <span class="text-sm text-gray-500">Sécurité</span>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Accédez aux données boursières en temps réel, historiques et analyses de marché.</p>
+                    <p class="text-gray-600 mb-4">Elle fournit un cadre complet pour gérer l'accès et la sécurité des utilisateurs et des ressources d'une application.</p>
                     <div class="flex justify-between items-center">
                         <span class="text-sm text-gray-500"><i class="fas fa-bolt mr-1"></i> Rapide</span>
                         <span class="text-sm text-gray-500"><i class="fas fa-lock mr-1"></i> Sécurisé</span>
@@ -58,70 +68,40 @@
                     </div>
                 </div>
                 <div class="px-6 pb-4">
-                    <button onclick="toggleDetails('details1')" class="text-purple-600 font-medium flex items-center">
+                    <button onclick="window.location.href='login.html'" class="text-purple-600 font-medium flex items-center">
                         Voir détails <i class="fas fa-chevron-down ml-2 text-sm"></i>
                     </button>
-                </div>
-                <div id="details1" class="api-details px-6 pb-6">
-                    <div class="border-t pt-4">
-                        <h5 class="font-bold mb-2">Endpoints disponibles:</h5>
-                        <ul class="space-y-2">
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-purple-500 mr-2"></i> /stocks/price?symbol=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-purple-500 mr-2"></i> /stocks/history?symbol=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-purple-500 mr-2"></i> /market/indices</li>
-                        </ul>
-                        <div class="mt-4">
-                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
-                                <i class="fas fa-key mr-2"></i> Obtenir une clé API
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <!-- API Card 2 -->
-            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                            <i class="fas fa-cloud-sun text-blue-600 text-xl"></i>
+                            <i class="fas fa-dollar-sign text-blue-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-xl text-gray-800">API Météo</h4>
-                            <span class="text-sm text-gray-500">Météo</span>
+                            <h4 class="font-bold text-xl text-gray-800">API de service d'acteur commercial</h4>
+                            <span class="text-sm text-gray-500">Commerce</span>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Données météorologiques mondiales en temps réel et prévisions jusqu'à 15 jours.</p>
+                    <p class="text-gray-600 mb-4">Elle permet d'interagir avec plus acteurs commerciaux.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500"><i class="fas fa-globe mr-1"></i> Global</span>
-                        <span class="text-sm text-gray-500"><i class="fas fa-history mr-1"></i> Historique</span>
-                        <span class="text-sm text-gray-500"><i class="fas fa-check-circle mr-1"></i> Verifié</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-dollar-sign mr-1"></i> Finance</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-handshake mr-1"></i> Intégrité</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-chart-line mr-1"></i> Rentabilité</span>
                     </div>
                 </div>
                 <div class="px-6 pb-4">
-                    <button onclick="toggleDetails('details2')" class="text-purple-600 font-medium flex items-center">
+                    <button onclick="window.location.href='login.html'" class="text-purple-600 font-medium flex items-center">
                         Voir détails <i class="fas fa-chevron-down ml-2 text-sm"></i>
                     </button>
-                </div>
-                <div id="details2" class="api-details px-6 pb-6">
-                    <div class="border-t pt-4">
-                        <h5 class="font-bold mb-2">Endpoints disponibles:</h5>
-                        <ul class="space-y-2">
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-blue-500 mr-2"></i> /weather/current?location=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-blue-500 mr-2"></i> /weather/forecast?location=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-blue-500 mr-2"></i> /weather/history?location=</li>
-                        </ul>
-                        <div class="mt-4">
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-key mr-2"></i> Obtenir une clé API
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <!-- API Card 3 -->
-            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
@@ -136,35 +116,72 @@
                     <div class="flex justify-between items-center">
                         <span class="text-sm text-gray-500"><i class="fas fa-tachometer-alt mr-1"></i> Haute précision</span>
                         <span class="text-sm text-gray-500"><i class="fas fa-layer-group mr-1"></i> Multi-couches</span>
-        <span class="text-sm text-gray-500"><i class="fas fa-check-circle mr-1"></i> Verifié</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-check-circle mr-1"></i> Verifié</span>
                     </div>
                 </div>
                 <div class="px-6 pb-4">
-                    <button onclick="toggleDetails('details3')" class="text-purple-600 font-medium flex items-center">
+                    <button onclick="window.location.href='login.html'" class="text-purple-600 font-medium flex items-center">
                         Voir détails <i class="fas fa-chevron-down ml-2 text-sm"></i>
                     </button>
                 </div>
-                <div id="details3" class="api-details px-6 pb-6">
-                    <div class="border-t pt-4">
-                        <h5 class="font-bold mb-2">Endpoints disponibles :</h5>
-                        <ul class="space-y-2">
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-green-500 mr-2"></i> /maps/geocode?address=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-green-500 mr-2"></i> /maps/route?from=&to=</li>
-                            <li class="flex items-center"><i class="fas fa-circle text-xs text-green-500 mr-2"></i> /maps/places?location=</li>
-                        </ul>
-                        <div class="mt-4">
-                            <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
-                                <i class="fas fa-key mr-2"></i> Obtenir une clé API
-                            </button>
+            </div>
+
+            <!-- API Card 4 -->
+            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-bell text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-800">API Notifications</h4>
+                            <span class="text-sm text-gray-500">Environnement</span>
                         </div>
                     </div>
+                    <p class="text-gray-600 mb-4">Signale les emails, messages, appels, et bien d'autres.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500"><i class="fas fa-sync-alt mr-1"></i> Temps réel</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-globe-americas mr-1"></i> Global</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-check-circle mr-1"></i> Verifié</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-4">
+                    <button onclick="window.location.href='login.html'" class="text-purple-600 font-medium flex items-center">
+                        Voir détails <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- API Card 5 -->
+            <div class="api-card bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-credit-card text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-800">API Paiement</h4>
+                            <span class="text-sm text-gray-500">Transaction</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Solution de paiement sécurisée avec support pour cartes, virements et portefeuilles électroniques.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500"><i class="fas fa-shield-alt mr-1"></i> Sécurisé</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-exchange-alt mr-1"></i> Multi-devises</span>
+                        <span class="text-sm text-gray-500"><i class="fas fa-check-circle mr-1"></i> Verifié</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-4">
+                    <button onclick="window.location.href='login.html'" class="text-purple-600 font-medium flex items-center">
+                        Voir détails <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-10">
             <button class="border border-purple-600 text-purple-600 font-bold px-6 py-3 rounded-full hover:bg-purple-50 transition">
-                <a href='connexion.html'>Voir plus d'APIs <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href='login.html'>Voir plus d'APIs <i class="fas fa-arrow-right ml-2"></i></a>
             </button>
         </div>
     </section>
@@ -190,7 +207,7 @@
                         <i class="fas fa-star text-yellow-400"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                         <i class="fas fa-star text-yellow-400"></i>
-                        </div>
+                    </div>
                     <p class="text-gray-600 italic">"L'API financière a révolutionné notre application. Les données sont toujours à jour et l'intégration a été incroyablement simple grâce à la documentation claire."</p>
                 </div>
                 
@@ -274,7 +291,7 @@
             <h3 class="text-2xl md:text-3xl font-bold mb-6">Prêt à commencer ?</h3>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Inscrivez-vous gratuitement et obtenez votre clé API en quelques secondes.</p>
             <button class="bg-white text-purple-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition transform hover:scale-105">
-                <a href='connexion.html'>Créer un compte <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href='inscription.html'>Créer un compte <i class="fas fa-arrow-right ml-2"></i></a>
             </button>
         </div>
     </section>
@@ -310,11 +327,35 @@
     <footer class="bg-gray-900 text-white py-6">
         <div class="container mx-auto px-4 text-center">
             <div class="text-sm text-gray-400">
-                © 2024 API Hub. Tous droits réservés.
+                © 2025 API Hub. Tous droits réservés.
             </div>
         </div>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script>
+        // Scroll functionality for API cards
+        const scrollContainer = document.querySelector('.api-scroll-container');
+        const scrollLeftBtn = document.querySelector('.scroll-left-btn');
+        const scrollRightBtn = document.querySelector('.scroll-right-btn');
+        
+        scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        
+        scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+        
+        // Hide scroll buttons when at the ends
+        const checkScrollButtons = () => {
+            scrollLeftBtn.style.display = scrollContainer.scrollLeft <= 0 ? 'none' : 'block';
+            scrollRightBtn.style.display = 
+                scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1 ? 'none' : 'block';
+        };
+        
+        scrollContainer.addEventListener('scroll', checkScrollButtons);
+        window.addEventListener('resize', checkScrollButtons);
+        checkScrollButtons();
+    </script>
 </body>
 </html>
