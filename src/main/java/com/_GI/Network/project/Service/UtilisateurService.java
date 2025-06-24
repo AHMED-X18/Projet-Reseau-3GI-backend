@@ -20,12 +20,12 @@ public class UtilisateurService {
     }
 
     public Utilisateur findByUsername(String username) {
-        return userRepository.findByNom(username);
+        return userRepository.findByLogin(username);
     }
 
     @Transactional
     public void createUser(Utilisateur user) {
-        if (userRepository.existsByNom(user.getNom())) {
+        if (userRepository.existsByLogin(user.getLogin())) {
             throw new RuntimeException("Nom d'utilisateur déjà existant");
         }
         if (userRepository.existsByEmail(user.getEmail())) {
@@ -35,7 +35,7 @@ public class UtilisateurService {
         userRepository.save(user);
     }
 
-    private String hashPassword(String password) {
+    public String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
@@ -72,5 +72,10 @@ public class UtilisateurService {
 
     public boolean existById(String id) {
         return userRepository.existsById(id);
+    }
+
+    public boolean validateCredentials(String email, String password) {
+        Utilisateur utilisateur = findByEmail(email);
+        return utilisateur != null ;
     }
 }

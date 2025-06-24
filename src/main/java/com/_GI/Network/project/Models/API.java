@@ -1,10 +1,13 @@
 package com._GI.Network.project.Models;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.Set;
 
 @Entity
 @Table(name = "api")
+@Data
 public class API {
     @Id
     @Column(name = "nom", nullable = false)
@@ -26,44 +29,4 @@ public class API {
     @OneToMany(mappedBy = "api", cascade = CascadeType.ALL)
     private Set<Access> access;
 
-    // Getters et setters
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getURL() {
-        return URL;
-    }
-
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public boolean isActivite() {
-        return activite;
-    }
-
-    public void setActivite(boolean activite) {
-        this.activite = activite;
-    }
 }
